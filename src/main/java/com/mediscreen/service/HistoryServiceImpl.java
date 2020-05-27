@@ -28,7 +28,7 @@ public class HistoryServiceImpl implements HistoryService {
 
 	@Override
 	public History updateHistory(History history, String id) {
-		History history2 = historyRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("History introuvable:" + id));
+		History history2 = historyRepository.findHistoryById(id);
 		
 		if(history2!=null) {
 			history2.setDateUpdate(new Date());
@@ -52,7 +52,8 @@ public class HistoryServiceImpl implements HistoryService {
 	
 	@Override
 	public History find(String id) {
-		History history2 = historyRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("History introuvable:" + id));
+		History history2 = historyRepository.findHistoryById(id);
+		log.info("History:" + history2.toString());
 		return history2;
 	}
 

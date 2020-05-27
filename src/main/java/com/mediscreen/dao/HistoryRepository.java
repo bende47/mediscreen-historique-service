@@ -13,6 +13,9 @@ public interface HistoryRepository extends MongoRepository<History, String> {
 	@Query(value="{ idPatient : ?0 }", sort = "{id : -1}")
 	List<History> findAllByOrderByIdDesc(String idpatient);
 	
+	@Query("{ id : ?0 }")
+	History findHistoryById(String id);
+	
 	public List<History> findAllByOrderByIdDesc();
 
 }
