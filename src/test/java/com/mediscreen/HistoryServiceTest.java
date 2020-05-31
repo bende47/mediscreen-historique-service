@@ -52,8 +52,10 @@ public class HistoryServiceTest {
 	public void findHistoryTest(){
 	  history = historyRepository.save(history);
 	  String id = history.getId();
-	  Optional<History> history = historyRepository.findById(id);
-	  assertTrue(history.isPresent());
+	  Optional<History> historys = historyRepository.findById(id);
+	  assertTrue(historys.isPresent());
+	  historyRepository.delete(history);
+
 	}
 	
 	@Test

@@ -70,7 +70,7 @@ class HistoryControllerTest {
 	
 	
 	@Test
-	public void deleteHistoryTestC() throws Exception {
+	public void allHistoryPatientTestC() throws Exception {
 			
 		this.mvc.perform(MockMvcRequestBuilders.get("/patHistory/allHistoryPatient/test")
 				.contentType(MediaType.APPLICATION_JSON)
